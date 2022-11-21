@@ -67,16 +67,14 @@ def creating_session(subsession):
 
     for group in subsession.get_groups():
         group.t_groups = next(treatments)
+        
 
-        # Second, assign treatment groups to equal the id in subsession for better overview
-        group.id_in_subsession = group.t_groups
-
-        # Third, store group level data into player data.
+        # Second, store group level data into player data.
         # Important for later showing the correct pages and for storing data into participant level
         for p in group.get_players():
-            p.treatment_0 = group.id_in_subsession == "T0"
-            p.treatment_1 = group.id_in_subsession == "T1"
-            p.treatment_2 = group.id_in_subsession == "T2"
+            p.treatment_0 = group.t_groups == "T0"
+            p.treatment_1 = group.t_groups == "T1"
+            p.treatment_2 = group.t_groups == "T2"
 
         # Last, since we want to test whether the sex of the fictional character plays a role,
         # split T1 participants into "Samantha" group and "Daniel" group
