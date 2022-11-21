@@ -1,0 +1,55 @@
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+        {#################################################################################}
+        {#####################       For ALL participants     ############################}
+        {#################################################################################}
+
+    <p align="justify">
+        {{ participant.p2_character_random }},
+        another participant in this experiment faced the
+        same scenarios that you faced in the previous round.
+
+        However,
+        {{ participant.p2_character_sex }}
+
+            {###########################################################################}
+            {################       For Just World participants     ####################}
+            {###########################################################################}
+
+
+        {{ if participant.c_role == "Just World" }}
+            <strong>did not</strong> have the opportunity to
+            <strong>choose freely</strong> between the risky,
+            and the safe alternative.
+
+            {{ participant.p2_character_random }}
+            <strong>had to</strong> face the risky lottery.
+
+            {#############################################################################}
+            {################       For Unjust World participants     ####################}
+            {#############################################################################}
+
+        {{ else }}
+
+            <strong>did</strong> have the opportunity to
+            <strong>choose freely</strong> between the risky,
+            and the safe alternative.
+
+            {{ participant.p2_character_random }}
+            <strong>did not</strong> have to face the risky lottery.
+
+        {{ endif }}
+
+        {#################################################################################}
+        {#####################       For ALL participants     ############################}
+        {#################################################################################}
+
+    </p>
+    <p align="justify">
+        Now, the same four scenarios will be presented again.
+    </p>
+
+    </div>
+</div>

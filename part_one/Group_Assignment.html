@@ -1,0 +1,27 @@
+{{ block title }}Part I{{ endblock }}
+
+{{ block content }}
+
+{######################################################################################################################}
+{###############################       For Elite participants       ######################################################}
+{######################################################################################################################}
+
+    {{ if participant.c_role == C.E_ROLE }}
+
+        <p>
+            You belonged to the {{ C.E_ROLE }} group.
+        </p>
+
+
+    {{ elif participant.c_role == C.NE_ROLE }}
+
+        <p>
+            You belonged to the {{ C.NE_ROLE }} group and faced the risky alternative.
+        </p>
+
+
+    {{ endif }}
+
+
+    {{ next_button }}
+{{ endblock }}

@@ -1,0 +1,15 @@
+{{ block title }}Part II{{ endblock }}
+{{ block content }}
+
+    {{ include C.INSTRUCTIONS_T1_TEMPLATE}}
+
+    <button class="btn btn-primary" style="display: none" id="next-button">Next</button>
+
+    <script>
+    setTimeout(function() {
+    document.getElementById('next-button').style.display = 'block';
+    }, 20 * 1000);
+    </script>
+
+
+{{ endblock }}

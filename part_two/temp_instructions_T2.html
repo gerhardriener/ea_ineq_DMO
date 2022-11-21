@@ -1,0 +1,49 @@
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+        {#################################################################################}
+        {#####################       For ALL participants     ############################}
+        {#################################################################################}
+
+    <p align="justify">
+        A group of participants in this experiment faced the same
+        scenarios that you faced in the previous part. However,
+        this group
+
+            {###########################################################################}
+            {################       For Just World participants     ####################}
+            {###########################################################################}
+
+        {{ if participant.c_role == "Just World" }}
+
+            <strong>did not</strong> have the opportunity
+            to <strong>choose freely</strong> between the risky and
+            the safe alternative but <strong>had to</strong> face
+            the risky alternative.
+
+            {#############################################################################}
+            {################       For Unjust World participants     ####################}
+            {#############################################################################}
+
+        {{ else }}
+
+            <strong>did</strong> have the opportunity to
+            <strong>choose freely</strong> between the risky and
+            the safe alternative. This group <strong>did not have
+            to</strong> face the risky alternative.
+
+        {{ endif }}
+
+    </p>
+
+        {#################################################################################}
+        {#####################       For ALL participants     ############################}
+        {#################################################################################}
+
+    <p align="justify">
+        Now, the same four scenarios will be presented again.
+    </p>
+
+    </div>
+</div>

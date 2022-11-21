@@ -1,0 +1,46 @@
+
+{{ if participant.c_role != "Just World" }}
+
+<h5>You belonged to the {{ participant.c_role }} group.</h5>
+
+{{ endif }}
+
+    <table class="table table-striped">
+        <thead>
+        <th>Part</th>
+        <th>Endowment</th>
+        <th>Scenario</th>
+        <th>Your Choice</th>
+        <th>Outcome Lottery</th>
+        <th>Safe Option</th>
+        <th>Payoff</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>I</td>
+                <td>{{ C.ENDOWMENT }}</td>
+                <td>{{ participant.p1_scenario_random }}</td>
+                <td>{{ participant.p1_risk_random_str }}</td>
+                <td>-{{ participant.p1_lottery_random_str }}</td>
+                <td>-{{ participant.p1_safe_random_str }}</td>
+                <td>{{ participant.p1_payoff }}</td>
+            </tr>
+            <tr>
+                <td>II</td>
+                <td>{{ C.ENDOWMENT }}</td>
+                <td>{{ participant.p2_scenario_random }}</td>
+                <td>{{ participant.p2_risk_random_str}}</td>
+                <td>-{{ participant.p2_lottery_random_str }}</td>
+                <td>-{{ participant.p2_safe_random_str }}</td>
+                <td>{{ participant.p2_payoff }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="alert alert-success" role="alert">
+        <h5>
+            You earned {{ participant.payoff }}.
+            Thus, your final payoff is:
+            {{ participant.payoff_plus_participation_fee }}
+        </h5>
+    </div>
